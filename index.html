@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avalon Tree Service | Professional Tree Care Orlando</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Raleway:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black:    #070f08;   /* deepest forest bg */
+      --dark:     #0c1a0e;   /* dark section bg */
+      --darker:   #091009;   /* alternate deep bg */
+      --card:     #112514;   /* card surface */
+      --card2:    #172e1b;   /* featured card */
+      --border:   #1e3d24;   /* subtle border */
+      --accent:   #3fa535;   /* forest green — primary CTA */
+      --accent-h: #2d8425;   /* deeper green hover */
+      --gold:     #d4a017;   /* amber gold — special accents */
+      --white:    #f0f7f0;   /* warm off-white */
+      --lgray:    #adc8b0;   /* light muted green-gray */
+      --gray:     #6a8d6e;   /* muted gray-green */
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    h3, h4, h5 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-block;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 13px 30px;
+      cursor: pointer;
+      border: none;
+      transition: background .2s, color .2s;
+    }
+    .btn-red  { background: var(--accent);  color: #fff; }
+    .btn-red:hover { background: var(--accent-h); }
+    .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
+    .btn-full { width: 100%; text-align: center; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      height: 68px;
+      padding: 0 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(7,14,9,.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background .3s;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 11px;
+    }
+    .logo-box {
+      width: 38px; height: 38px;
+      background: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .logo-text {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900; font-size: 13px;
+      letter-spacing: 2.5px; text-transform: uppercase;
+    }
+    .logo-text em { color: var(--accent); font-style: normal; }
+
+    .nav-links {
+      display: flex; gap: 32px; list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--lgray); transition: color .2s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .nav-right { display: flex; align-items: center; gap: 22px; }
+    .nav-phone {
+      font-family: 'Raleway', sans-serif;
+      font-size: 13px; font-weight: 700;
+      color: #fff;
+    }
+    .nav-phone i { color: var(--accent); margin-right: 6px; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(rgba(4,14,5,.68), rgba(4,12,5,.76)),
+        url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80')
+        center / cover no-repeat;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 940px; padding: 0 40px;
+      animation: fadeUp .9s ease both;
+    }
+    .eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 5px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 74px);
+      line-height: 1.04; margin-bottom: 22px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero-sub {
+      font-size: 17px; color: var(--lgray);
+      max-width: 580px; margin: 0 auto 44px;
+    }
+
+    /* ─── SECTION COMMONS ─── */
+    section { padding: 90px 60px; }
+    .sec-tag {
+      font-family: 'Raleway', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .sec-title {
+      font-size: clamp(28px, 3.5vw, 46px);
+      line-height: 1.08; margin-bottom: 16px;
+    }
+    .sec-title span { color: var(--accent); }
+    .sec-sub {
+      color: var(--gray); font-size: 14px;
+      max-width: 560px; line-height: 1.8;
+    }
+
+    /* ─── PREMIUM SERVICES ─── */
+    .prem-svc { background: var(--dark); }
+    .prem-hd  {
+      display: flex; justify-content: space-between;
+      align-items: flex-end; margin-bottom: 50px; gap: 40px;
+    }
+    .svc-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2px; background: var(--border);
+    }
+    .svc-card {
+      background: var(--card); padding: 40px 28px;
+      transition: background .2s;
+    }
+    .svc-card:hover { background: #222; }
+    .svc-icon {
+      width: 46px; height: 46px;
+      background: var(--accent); display: flex;
+      align-items: center; justify-content: center;
+      font-size: 18px; color: #fff; margin-bottom: 20px;
+    }
+    .svc-card h4 { font-size: 13px; letter-spacing: 1px; margin-bottom: 12px; }
+    .svc-card p  { font-size: 13px; color: var(--gray); line-height: 1.75; }
+
+    /* ─── PACKAGES ─── */
+    .pkgs { background: var(--darker); }
+    .pkgs-hd { margin-bottom: 50px; }
+    .pkg-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2px; background: var(--border);
+    }
+    .pkg-card {
+      background: var(--card); padding: 40px 28px;
+      position: relative;
+    }
+    .pkg-card.featured {
+      background: var(--card2);
+      border-top: 3px solid var(--gold);
+    }
+    .pkg-badge {
+      position: absolute; top: 0; right: 0;
+      background: var(--gold); color: #fff;
+      font-family: 'Raleway', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 5px 11px;
+    }
+    .pkg-name {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gray); margin-bottom: 12px;
+    }
+    .pkg-price {
+      font-family: 'Raleway', sans-serif;
+      font-size: 50px; font-weight: 900;
+      line-height: 1; margin-bottom: 5px;
+    }
+    .pkg-price sup { font-size: 22px; vertical-align: top; margin-top: 10px; }
+    .pkg-price small { font-size: 22px; font-weight: 600; }
+    .pkg-note { font-size: 12px; color: var(--gray); margin-bottom: 22px; }
+    .pkg-list { list-style: none; margin-bottom: 28px; }
+    .pkg-list li {
+      font-size: 13px; color: var(--lgray);
+      padding: 7px 0; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 9px;
+    }
+    .pkg-list li i { color: var(--accent); font-size: 10px; }
+
+    /* ─── SOLUTIONS ─── */
+    .solutions { background: var(--dark); }
+    .sol-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: start;
+    }
+    .sol-left h2 { font-size: clamp(26px, 3vw, 40px); margin-bottom: 28px; }
+    .sol-left p  { font-size: 14px; color: var(--gray); line-height: 1.8; margin-bottom: 28px; }
+    .sol-tabs { display: flex; flex-direction: column; gap: 2px; }
+    .sol-tab {
+      background: var(--card); padding: 14px 20px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gray); text-align: left;
+      border: none; border-left: 3px solid transparent;
+      cursor: pointer; transition: all .2s;
+    }
+    .sol-tab.active, .sol-tab:hover {
+      background: #232323; color: #fff;
+      border-left-color: var(--accent);
+    }
+    .sol-right { background: var(--card); padding: 42px; }
+    .sol-right h3 { font-size: 21px; margin-bottom: 14px; }
+    .sol-right p  { font-size: 14px; color: var(--gray); line-height: 1.85; margin-bottom: 22px; }
+    .sol-checks {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; list-style: none; margin-bottom: 28px;
+    }
+    .sol-checks li {
+      font-size: 13px; color: var(--lgray);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .sol-checks li i { color: var(--accent); font-size: 10px; }
+
+    /* ─── OTHER SERVICES GRID ─── */
+    .other-svc { background: var(--black); }
+    .other-hd  { margin-bottom: 40px; }
+    .img-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 210px);
+      gap: 4px;
+    }
+    .img-card { position: relative; overflow: hidden; cursor: pointer; }
+    .img-bg {
+      width: 100%; height: 100%;
+      background-size: cover; background-position: center;
+      transition: transform .45s ease;
+    }
+    .img-card:hover .img-bg { transform: scale(1.07); }
+    .img-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,.52);
+      display: flex; align-items: flex-end; padding: 20px;
+      transition: background .3s;
+    }
+    .img-card:hover .img-overlay { background: rgba(220,38,38,.65); }
+    .img-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px;
+    }
+
+    /* ─── EXPERT ─── */
+    .expert { background: var(--dark); }
+    .expert-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .expert-img {
+      height: 520px;
+      background:
+        linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.3)),
+        url('https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&w=900&q=80')
+        center / cover no-repeat;
+      position: relative;
+    }
+    .expert-img-badge {
+      position: absolute; bottom: 30px; left: 30px;
+      background: var(--gold); padding: 14px 20px;
+    }
+    .expert-img-badge strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 28px; font-weight: 900;
+    }
+    .expert-img-badge span {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+    }
+    .expert-copy h2 { font-size: clamp(24px, 2.8vw, 38px); margin-bottom: 18px; line-height: 1.15; }
+    .expert-copy > p { font-size: 14px; color: var(--gray); line-height: 1.85; margin-bottom: 26px; }
+    .expert-pts { list-style: none; margin-bottom: 32px; }
+    .expert-pts li {
+      font-size: 14px; color: var(--lgray);
+      padding: 9px 0; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .expert-pts li i { color: var(--accent); flex-shrink: 0; width: 14px; }
+
+    /* ─── INSURANCE STATS ─── */
+    .insurance { background: var(--black); }
+    .ins-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .ins-copy h2 { font-size: clamp(24px, 2.8vw, 38px); line-height: 1.12; margin-bottom: 20px; }
+    .ins-copy > p { font-size: 14px; color: var(--gray); line-height: 1.85; margin-bottom: 26px; }
+    .ins-links { display: flex; flex-direction: column; gap: 11px; margin-bottom: 32px; }
+    .ins-links-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: #fff; margin-bottom: 4px;
+    }
+    .ins-link {
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--accent); display: flex;
+      align-items: center; gap: 8px; transition: color .2s;
+    }
+    .ins-link:hover { color: #fff; }
+    .stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
+    }
+    .stat-box {
+      background: var(--card); padding: 32px 28px;
+      border-top: 3px solid var(--accent);
+    }
+    .stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 46px; font-weight: 700;
+      color: var(--gold); line-height: 1; margin-bottom: 8px;
+    }
+    .stat-lbl {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* ─── CERTS STRIP ─── */
+    .certs { background: var(--darker); padding: 46px 60px; }
+    .certs-inner {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 30px; flex-wrap: wrap;
+    }
+    .certs-lbl {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gray); min-width: 140px;
+    }
+    .certs-row {
+      display: flex; align-items: center;
+      gap: 46px; flex: 1; justify-content: center; flex-wrap: wrap;
+    }
+    .cert {
+      font-family: 'Raleway', sans-serif;
+      font-size: 13px; font-weight: 800;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,.28); transition: color .2s;
+    }
+    .cert:hover { color: rgba(255,255,255,.65); }
+
+    /* ─── REVIEWS ─── */
+    .reviews { background: var(--dark); }
+    .reviews-hd { text-align: center; margin-bottom: 56px; }
+    .rev-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; background: var(--border); margin-bottom: 42px;
+    }
+    .rev-card { background: var(--card); padding: 42px 34px; }
+    .rev-stars { color: var(--accent); font-size: 17px; margin-bottom: 16px; }
+    .rev-text {
+      font-size: 14px; color: var(--lgray); font-style: italic;
+      line-height: 1.82; margin-bottom: 24px;
+    }
+    .rev-author { display: flex; align-items: center; gap: 13px; }
+    .rev-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); display: flex;
+      align-items: center; justify-content: center;
+      font-family: 'Raleway', sans-serif;
+      font-size: 15px; font-weight: 700; flex-shrink: 0;
+    }
+    .rev-info strong {
+      display: block; font-family: 'Raleway', sans-serif;
+      font-size: 13px; font-weight: 700;
+    }
+    .rev-info span { font-size: 12px; color: var(--gray); }
+    .reviews-cta { text-align: center; }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--black); }
+    .faq-hd { text-align: center; margin-bottom: 56px; }
+    .faq-wrap { max-width: 880px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; background: none; border: none;
+      color: #fff; font-family: 'Raleway', sans-serif;
+      font-size: 13px; font-weight: 700; letter-spacing: .5px;
+      text-transform: uppercase; padding: 24px 0;
+      text-align: left; cursor: pointer;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 20px;
+    }
+    .faq-q i { color: var(--accent); flex-shrink: 0; transition: transform .3s; }
+    .faq-item.open .faq-q i { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+    .faq-item.open .faq-a { max-height: 320px; }
+    .faq-a p { font-size: 14px; color: var(--gray); line-height: 1.85; padding-bottom: 26px; }
+
+    /* ─── CONTACT ─── */
+    .contact { background: var(--dark); }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .contact-left h2 { font-size: clamp(26px, 3vw, 42px); line-height: 1.1; margin-bottom: 20px; }
+    .contact-left > p { font-size: 14px; color: var(--gray); line-height: 1.85; margin-bottom: 32px; }
+    .c-info { display: flex; flex-direction: column; gap: 18px; }
+    .c-info-row { display: flex; align-items: flex-start; gap: 14px; }
+    .c-info-row i { color: var(--accent); margin-top: 3px; width: 14px; flex-shrink: 0; }
+    .c-info-row strong {
+      display: block; font-family: 'Raleway', sans-serif;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .c-info-row span { font-size: 14px; color: var(--lgray); }
+
+    /* Form */
+    .c-form { background: var(--card); padding: 42px; }
+    .c-form h3 {
+      font-size: 14px; letter-spacing: 3px; margin-bottom: 30px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .fg { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .fg label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gray);
+    }
+    .fg input, .fg select, .fg textarea {
+      background: var(--black); border: 1px solid var(--border);
+      color: #fff; padding: 12px 14px;
+      font-size: 14px; font-family: 'Lato', sans-serif;
+      outline: none; width: 100%; transition: border-color .2s;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--accent); }
+    .fg textarea { height: 100px; resize: none; }
+    .fg select option { background: var(--dark); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #050505;
+      padding: 72px 60px 32px;
+      border-top: 1px solid var(--border);
+    }
+    .ft-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.4fr 1.4fr;
+      gap: 50px; margin-bottom: 52px;
+    }
+    .ft-brand h3 { font-size: 18px; margin-bottom: 16px; }
+    .ft-brand h3 span { color: var(--accent); }
+    .ft-brand p { font-size: 13px; color: var(--gray); line-height: 1.8; margin-bottom: 24px; }
+    .socials { display: flex; gap: 10px; }
+    .social {
+      width: 38px; height: 38px; background: var(--card);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gray); font-size: 13px; transition: all .2s;
+    }
+    .social:hover { background: var(--accent); color: #fff; }
+    .ft-col h4 {
+      font-size: 11px; letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+    .ft-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .ft-links a { font-size: 13px; color: var(--gray); transition: color .2s; }
+    .ft-links a:hover { color: var(--accent); }
+    .ft-links i { margin-right: 8px; color: var(--accent); font-size: 11px; }
+    .ft-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .ft-bottom p { font-size: 12px; color: var(--gray); }
+    .ft-bottom span { color: var(--accent); }
+
+    /* ─── ANIMATION ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ══════════════════════════════════════════
+       HAMBURGER & MOBILE MENU
+    ══════════════════════════════════════════ */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all .3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      background: rgba(5,12,6,.99);
+      border-bottom: 2px solid var(--border);
+      padding: 10px 0 24px;
+      z-index: 997;
+      flex-direction: column;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 13px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2px;
+      color: var(--lgray); padding: 16px 30px;
+      border-bottom: 1px solid var(--border);
+      transition: color .2s, background .2s;
+    }
+    .mobile-menu a:hover { color: var(--white); background: rgba(255,255,255,.03); }
+    .mobile-menu .mob-footer {
+      padding: 20px 30px 0;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .mobile-menu .mob-phone {
+      font-family: 'Raleway', sans-serif;
+      font-size: 14px; font-weight: 700; color: var(--white);
+    }
+    .mobile-menu .mob-phone i { color: var(--accent); margin-right: 8px; }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE — 1100px (large tablets / small laptops)
+    ══════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      section { padding: 70px 40px; }
+      .certs { padding: 44px 40px; }
+
+      .pkg-grid  { grid-template-columns: repeat(2, 1fr); }
+      .rev-grid  { grid-template-columns: repeat(2, 1fr); }
+      .ft-top    { grid-template-columns: 1fr 1fr; gap: 36px; }
+
+      .sol-inner  { gap: 40px; }
+      .expert-inner { gap: 50px; }
+      .ins-inner    { gap: 50px; }
+      .contact-inner { gap: 50px; }
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE — 900px (tablet portrait)
+    ══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      nav { padding: 0 28px; }
+      .nav-links { display: none; }
+      .nav-phone  { display: none; }
+      .hamburger  { display: flex; }
+
+      section { padding: 60px 28px; }
+      .certs  { padding: 40px 28px; }
+
+      .prem-hd { flex-direction: column; gap: 16px; }
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .sol-inner    { grid-template-columns: 1fr; }
+      .sol-right    { padding: 32px; }
+
+      .img-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 190px);
+      }
+
+      .expert-inner { grid-template-columns: 1fr; }
+      .expert-img   { height: 360px; }
+
+      .ins-inner    { grid-template-columns: 1fr; }
+      .stats-grid   { grid-template-columns: repeat(4, 1fr); }
+
+      .rev-grid     { grid-template-columns: 1fr; }
+
+      .contact-inner { grid-template-columns: 1fr; }
+
+      .ft-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .ft-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE — 600px (phones)
+    ══════════════════════════════════════════ */
+    @media (max-width: 600px) {
+      nav { padding: 0 18px; height: 62px; }
+      .mobile-menu { top: 62px; }
+      .logo-text { font-size: 11px; letter-spacing: 1.5px; }
+      .logo-box  { width: 32px; height: 32px; font-size: 15px; }
+
+      section { padding: 50px 18px; }
+      .certs  { padding: 32px 18px; }
+
+      .hero-content { padding: 0 20px; }
+      .hero h1 { font-size: clamp(26px, 8vw, 44px); line-height: 1.1; }
+      .hero-sub { font-size: 15px; }
+
+      .svc-grid { grid-template-columns: 1fr; }
+      .pkg-grid { grid-template-columns: 1fr; }
+
+      .sol-tabs { gap: 1px; }
+      .sol-right { padding: 24px 20px; }
+      .sol-checks { grid-template-columns: 1fr; }
+
+      .img-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 160px);
+      }
+
+      .expert-img  { height: 280px; }
+      .expert-img-badge strong { font-size: 22px; }
+
+      .stats-grid  { grid-template-columns: repeat(2, 1fr); }
+      .stat-num    { font-size: 34px; }
+
+      .certs-inner { flex-direction: column; align-items: flex-start; gap: 18px; }
+      .certs-row   { gap: 20px; justify-content: flex-start; }
+
+      .c-form { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+
+      .ft-top { grid-template-columns: 1fr; gap: 32px; }
+
+      .pkg-card.featured { border-top: 3px solid var(--gold); }
+
+      .sec-title { font-size: clamp(22px, 6vw, 36px); }
+
+      .ins-links { gap: 8px; }
+      .expert-pts li { font-size: 13px; }
+
+      .btn { font-size: 11px; letter-spacing: 1.5px; padding: 12px 24px; }
+    }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE — 400px (small phones)
+    ══════════════════════════════════════════ */
+    @media (max-width: 400px) {
+      .hero h1  { font-size: clamp(22px, 9vw, 34px); }
+      .img-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 150px);
+      }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════ NAV ══════════════════════ -->
+<nav id="main-nav">
+  <div class="nav-logo">
+    <div class="logo-box">🌳</div>
+    <span class="logo-text">AVALON <em>TREE</em> SERVICE</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-phone"><i class="fas fa-phone"></i>(407) 555-0182</span>
+    <a href="#contact" class="btn btn-red">FREE QUOTE</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#services"  onclick="closeMobile()">Services</a>
+  <a href="#packages"  onclick="closeMobile()">Packages</a>
+  <a href="#solutions" onclick="closeMobile()">Solutions</a>
+  <a href="#about"     onclick="closeMobile()">About</a>
+  <a href="#contact"   onclick="closeMobile()">Contact</a>
+  <div class="mob-footer">
+    <span class="mob-phone"><i class="fas fa-phone"></i>(407) 555-0182</span>
+    <a href="#contact" class="btn btn-red" onclick="closeMobile()" style="text-align:center;">GET FREE QUOTE</a>
+  </div>
+</div>
+
+<!-- ══════════════════════ HERO ══════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Orlando's Premier Tree Care Specialists</div>
+    <h1>WELCOME TO<br>AVALON TREE SERVICE<br><span>YOUR TRUSTED PARTNER<br>FOR PROFESSIONAL TREE CARE</span></h1>
+    <p class="hero-sub">ISA-certified arborists delivering expert trimming, removal &amp; emergency services — protecting your property with precision.</p>
+    <a href="#contact" class="btn btn-red" style="padding:16px 46px; font-size:13px; letter-spacing:3px;">BOOK TODAY</a>
+  </div>
+</section>
+
+<!-- ══════════════════════ PREMIUM SERVICES ══════════════════════ -->
+<section class="prem-svc" id="services">
+  <div class="prem-hd">
+    <div>
+      <div class="sec-tag">What We Offer</div>
+      <h2 class="sec-title">PREMIUM<br>TREE SERVICES</h2>
+    </div>
+    <p class="sec-sub">From routine trimming to emergency removals, our ISA-certified crew handles every job with precision, safety, and total cleanup — guaranteed.</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-icon"><i class="fas fa-cut"></i></div>
+      <h4>TREE TRIMMING</h4>
+      <p>Expert crown reduction, deadwood removal, and precision shaping to promote healthy growth and maximize curb appeal year-round.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="fas fa-tree"></i></div>
+      <h4>TREE REMOVAL</h4>
+      <p>Safe, efficient removal of hazardous, diseased, or unwanted trees. Full debris cleanup and haul-away included on every job.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="fas fa-circle-notch"></i></div>
+      <h4>STUMP GRINDING</h4>
+      <p>Complete below-grade stump elimination using industrial grinders. Yard fully restored and ready for replanting or landscaping.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="fas fa-bolt"></i></div>
+      <h4>24/7 EMERGENCY</h4>
+      <p>Around-the-clock emergency response for storm damage, fallen trees, and any hazardous situation threatening your home or business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ PACKAGES ══════════════════════ -->
+<section class="pkgs" id="packages">
+  <div class="pkgs-hd">
+    <div class="sec-tag">Service Plans</div>
+    <h2 class="sec-title">SIGNATURE SERVICE <span>PACKAGES</span></h2>
+  </div>
+  <div class="pkg-grid">
+
+    <div class="pkg-card">
+      <div class="pkg-name">Essential Care</div>
+      <div class="pkg-price"><sup>$</sup>295</div>
+      <div class="pkg-note">Starting price · 1 tree</div>
+      <ul class="pkg-list">
+        <li><i class="fas fa-check"></i> Single tree trim or prune</li>
+        <li><i class="fas fa-check"></i> Debris cleanup &amp; haul</li>
+        <li><i class="fas fa-check"></i> Visual health assessment</li>
+        <li><i class="fas fa-check"></i> Same-week scheduling</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline btn-full">GET STARTED</a>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-name">Property Package</div>
+      <div class="pkg-price"><sup>$</sup>595</div>
+      <div class="pkg-note">Up to 3 trees</div>
+      <ul class="pkg-list">
+        <li><i class="fas fa-check"></i> Full trim on 3 trees</li>
+        <li><i class="fas fa-check"></i> Stump grinding (1 stump)</li>
+        <li><i class="fas fa-check"></i> Full debris removal &amp; haul</li>
+        <li><i class="fas fa-check"></i> Written care report</li>
+        <li><i class="fas fa-check"></i> Priority scheduling</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline btn-full">GET STARTED</a>
+    </div>
+
+    <div class="pkg-card featured">
+      <div class="pkg-badge">MOST POPULAR</div>
+      <div class="pkg-name">Elite Package</div>
+      <div class="pkg-price"><sup>$</sup>1,195</div>
+      <div class="pkg-note">Up to 8 trees</div>
+      <ul class="pkg-list">
+        <li><i class="fas fa-check"></i> Full trim on up to 8 trees</li>
+        <li><i class="fas fa-check"></i> 2 stump grindings</li>
+        <li><i class="fas fa-check"></i> Certified arborist report</li>
+        <li><i class="fas fa-check"></i> Debris removal &amp; haul</li>
+        <li><i class="fas fa-check"></i> Tree health assessment</li>
+        <li><i class="fas fa-check"></i> Priority scheduling</li>
+      </ul>
+      <a href="#contact" class="btn btn-red btn-full" style="padding:14px;">GET STARTED</a>
+    </div>
+
+    <div class="pkg-card">
+      <div class="pkg-name">Premium Pro</div>
+      <div class="pkg-price"><sup>$</sup>1,795<small>+</small></div>
+      <div class="pkg-note">Full estate · unlimited trees</div>
+      <ul class="pkg-list">
+        <li><i class="fas fa-check"></i> Unlimited tree trimming</li>
+        <li><i class="fas fa-check"></i> Up to 4 full removals</li>
+        <li><i class="fas fa-check"></i> All stump grinding</li>
+        <li><i class="fas fa-check"></i> Full property management</li>
+        <li><i class="fas fa-check"></i> Quarterly maintenance plan</li>
+        <li><i class="fas fa-check"></i> VIP emergency response</li>
+      </ul>
+      <a href="#contact" class="btn btn-outline btn-full">GET STARTED</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ SOLUTIONS ══════════════════════ -->
+<section class="solutions" id="solutions">
+  <div class="sol-inner">
+    <div class="sol-left">
+      <div class="sec-tag">Specialized Services</div>
+      <h2>UPGRADES<br>&amp; SOLUTIONS</h2>
+      <p>Need something beyond our standard packages? Our certified crew offers the full spectrum of tree and land services. Select a category to explore.</p>
+      <div class="sol-tabs">
+        <button class="sol-tab active" onclick="setTab(this,0)">TREE REMOVAL</button>
+        <button class="sol-tab" onclick="setTab(this,1)">LAND CLEARING</button>
+        <button class="sol-tab" onclick="setTab(this,2)">TREE HEALTH CARE</button>
+        <button class="sol-tab" onclick="setTab(this,3)">CRANE SERVICES</button>
+        <button class="sol-tab" onclick="setTab(this,4)">STORM DAMAGE</button>
+      </div>
+    </div>
+    <div class="sol-right" id="sol-content">
+      <div class="sec-tag">Tree Removal</div>
+      <h3>COMPLETE TREE REMOVAL</h3>
+      <p>Our expert team safely removes trees of any size using industry-leading equipment and techniques. Whether it's a single dead tree or a grove of specimens, we guarantee zero damage to surrounding structures and landscaping. Full stump removal and site cleanup included.</p>
+      <ul class="sol-checks">
+        <li><i class="fas fa-check"></i> Trees of any size</li>
+        <li><i class="fas fa-check"></i> Zero property damage</li>
+        <li><i class="fas fa-check"></i> Full cleanup included</li>
+        <li><i class="fas fa-check"></i> Licensed &amp; insured</li>
+        <li><i class="fas fa-check"></i> Same-day available</li>
+        <li><i class="fas fa-check"></i> Free estimate</li>
+      </ul>
+      <a href="#contact" class="btn btn-red">START YOUR PROJECT</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ OTHER SERVICES GRID ══════════════════════ -->
+<section class="other-svc">
+  <div class="other-hd">
+    <div class="sec-tag">Full Service Menu</div>
+    <h2 class="sec-title">OTHER<br><span>PREMIUM SERVICES</span></h2>
+  </div>
+  <div class="img-grid">
+    <div class="img-card">
+      <div class="img-bg" style="background:linear-gradient(135deg,#0a1f0a,#183218),url('https://images.unsplash.com/photo-1593357849755-5b7e9a3b1e91?auto=format&fit=crop&w=600&q=80') center/cover"></div>
+      <div class="img-overlay"><span class="img-label">Tree Removal</span></div>
+    </div>
+    <div class="img-card">
+      <div class="img-bg" style="background:linear-gradient(135deg,#1a180a,#2e2c12),url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80') center/cover"></div>
+      <div class="img-overlay"><span class="img-label">Land Clearing</span></div>
+    </div>
+    <div class="img-card">
+      <div class="img-bg" style="background:linear-gradient(135deg,#0c0a1a,#1a183a),url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80') center/cover"></div>
+      <div class="img-overlay"><span class="img-label">Stump Grinding</span></div>
+    </div>
+    <div class="img-card">
+      <div class="img-bg" style="background:linear-gradient(135deg,#1a0a0a,#3a1515),url('https://images.unsplash.com/photo-1504197885272-42498a2f7b82?auto=format&fit=crop&w=600&q=80') center/cover"></div>
+      <div class="img-overlay"><span class="img-label">Emergency Service</span></div>
+    </div>
+    <div class="img-card">
+      <div class="img-bg" style="background:linear-gradient(135deg,#0a1a10,#153025),url('https://images.unsplash.com/photo-1530811761207-8d9d22f0a141?auto=format&fit=crop&w=600&q=80') center/cover"></div>
+      <div class="img-overlay"><span class="img-label">Storm Cleanup</span></div>
+    </div>
+    <div class="img-card">
+      <div class="img-bg" style="background:linear-gradient(135deg,#141a0a,#253015),url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=80') center/cover"></div>
+      <div class="img-overlay"><span class="img-label">Tree Health Care</span></div>
+    </div>
+    <div class="img-card">
+      <div class="img-bg" style="background:linear-gradient(135deg,#0f0a1a,#1f1530),url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80') center/cover"></div>
+      <div class="img-overlay"><span class="img-label">Crane Services</span></div>
+    </div>
+    <div class="img-card">
+      <div class="img-bg" style="background:linear-gradient(135deg,#0a181a,#123035),url('https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80') center/cover"></div>
+      <div class="img-overlay"><span class="img-label">Cabling &amp; Bracing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ EXPERT ══════════════════════ -->
+<section class="expert" id="about">
+  <div class="expert-inner">
+    <div class="expert-img">
+      <div class="expert-img-badge">
+        <strong>20+</strong>
+        <span>Years Serving Orlando</span>
+      </div>
+    </div>
+    <div class="expert-copy">
+      <div class="sec-tag">Why Choose Avalon</div>
+      <h2 class="sec-title">EXPERT TREE CARE<br>&amp; INSURANCE ASSISTANCE<br>IN HOUSTON</h2>
+      <p>At Avalon Tree Service, we've been protecting Orlando properties for over two decades. Our ISA-certified arborists combine deep expertise with state-of-the-art equipment to safely handle any tree situation — from routine maintenance to complex storm-damage emergencies. Every job is backed by our satisfaction guarantee.</p>
+      <ul class="expert-pts">
+        <li><i class="fas fa-shield-alt"></i> ISA Certified Arborists on every job</li>
+        <li><i class="fas fa-file-invoice-dollar"></i> Full insurance claim assistance included</li>
+        <li><i class="fas fa-clock"></i> 24/7 emergency response team</li>
+        <li><i class="fas fa-star"></i> 500+ verified 5-star Google reviews</li>
+        <li><i class="fas fa-leaf"></i> Environmentally responsible practices</li>
+      </ul>
+      <a href="#contact" class="btn btn-red">BOOK AN EXPERT TODAY</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ INSURANCE / STATS ══════════════════════ -->
+<section class="insurance">
+  <div class="ins-inner">
+    <div class="ins-copy">
+      <div class="sec-tag">Full-Service</div>
+      <h2 class="sec-title">FULL-SERVICE<br>TREE CARE &amp;<br>SUPPORT IN<br>HOUSTON</h2>
+      <p>Avalon handles everything from the first call to final cleanup. We work directly with your insurance company to maximize coverage for storm damage, fallen trees, and hazardous removals — so you keep more of your money.</p>
+      <div class="ins-links">
+        <div class="ins-links-label">WE HANDLE IT ALL:</div>
+        <a href="#contact" class="ins-link"><i class="fas fa-arrow-right"></i> Insurance Claim Assistance</a>
+        <a href="#contact" class="ins-link"><i class="fas fa-arrow-right"></i> Storm Damage Assessment</a>
+        <a href="#contact" class="ins-link"><i class="fas fa-arrow-right"></i> Direct Insurance Billing</a>
+      </div>
+      <a href="#contact" class="btn btn-red">GET THE FULL ADVANTAGE</a>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-num">500+</div>
+        <div class="stat-lbl">CLAIMS HANDLED</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">$2.7M</div>
+        <div class="stat-lbl">TOTAL PAYOUT VALUE</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">20+</div>
+        <div class="stat-lbl">YEARS EXPERIENCE</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">98%</div>
+        <div class="stat-lbl">SATISFACTION RATE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ CERTS STRIP ══════════════════════ -->
+<section class="certs">
+  <div class="certs-inner">
+    <div class="certs-lbl">WE WORK WITH ALL MAJOR PROVIDERS</div>
+    <div class="certs-row">
+      <span class="cert">ISA CERTIFIED</span>
+      <span class="cert">TCIA MEMBER</span>
+      <span class="cert">BBB A+</span>
+      <span class="cert">ALLSTATE</span>
+      <span class="cert">STATE FARM</span>
+      <span class="cert">GEICO</span>
+      <span class="cert">USAA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ REVIEWS ══════════════════════ -->
+<section class="reviews">
+  <div class="reviews-hd">
+    <div class="sec-tag">Testimonials</div>
+    <h2 class="sec-title">CUSTOMER <span>REVIEWS</span></h2>
+  </div>
+  <div class="rev-grid">
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Avalon removed a massive oak that was dangerously close to our roof after a storm. They were there within hours, worked safely, and left the yard spotless. Couldn't believe how professional and fast they were."</p>
+      <div class="rev-author">
+        <div class="rev-avatar">JR</div>
+        <div class="rev-info">
+          <strong>James Reynolds</strong>
+          <span>Orlando, FL · Google Review</span>
+        </div>
+      </div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Used Avalon for a full property cleanup — 6 trees trimmed, 2 stumps ground. Total transformation. The crew was incredibly skilled and the pricing was fair. My yard has never looked better."</p>
+      <div class="rev-author">
+        <div class="rev-avatar">MM</div>
+        <div class="rev-info">
+          <strong>Maria Martinez</strong>
+          <span>Kissimmee, FL · Google Review</span>
+        </div>
+      </div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"They helped us navigate our entire insurance claim after hurricane damage. Their arborist report was detailed and professional. The insurance company approved everything. Saved us thousands."</p>
+      <div class="rev-author">
+        <div class="rev-avatar">DK</div>
+        <div class="rev-info">
+          <strong>David Kim</strong>
+          <span>Winter Park, FL · Google Review</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-cta">
+    <a href="#" class="btn btn-outline">VIEW MORE REVIEWS ON GOOGLE</a>
+  </div>
+</section>
+
+<!-- ══════════════════════ FAQ ══════════════════════ -->
+<section class="faq">
+  <div class="faq-hd">
+    <div class="sec-tag">Got Questions?</div>
+    <h2 class="sec-title">FREQUENTLY ASKED <span>QUESTIONS</span></h2>
+  </div>
+  <div class="faq-wrap">
+
+    <div class="faq-item open">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        DO I NEED AN APPOINTMENT FOR AN ESTIMATE?
+        <i class="fas fa-plus"></i>
+      </button>
+      <div class="faq-a">
+        <p>No appointment is necessary for a free estimate. You can call us, fill out our online form, or use our live chat. Most estimates are provided the same day or next business day. For emergency situations, we provide an immediate response 24/7.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        DO YOU WORK WITH MY INSURANCE COMPANY?
+        <i class="fas fa-plus"></i>
+      </button>
+      <div class="faq-a">
+        <p>Absolutely. We work directly with all major insurance providers including Allstate, State Farm, GEICO, USAA, and more. Our certified arborists prepare detailed reports and documentation to maximize your claim. We handle the paperwork so you don't have to.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        WILL YOU REPLANT AFTER A TREE IS REMOVED?
+        <i class="fas fa-plus"></i>
+      </button>
+      <div class="faq-a">
+        <p>Yes! We offer replanting services with species matched to your property's aesthetic, soil conditions, and sun exposure. Our arborists recommend the best replacement trees for your yard's specific environment and size requirements. Ask about our replanting add-on when booking.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        HOW LONG WILL THE SERVICE TAKE?
+        <i class="fas fa-plus"></i>
+      </button>
+      <div class="faq-a">
+        <p>Most residential jobs are completed in 1–2 days. A single tree trim typically takes 2–4 hours. Full property packages with multiple trees may take a full day. We'll provide a detailed timeline during your free estimate and keep you informed throughout every step.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        DO YOU OFFER A GUARANTEE ON YOUR WORK?
+        <i class="fas fa-plus"></i>
+      </button>
+      <div class="faq-a">
+        <p>Yes, we stand behind every job. All tree trimming and removal work is fully guaranteed, and we offer a 1-year warranty on tree health treatments and cabling installations. If any issue arises related to our work, we'll return and make it right at no charge.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ CONTACT ══════════════════════ -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="sec-tag">Reach Out</div>
+      <h2 class="sec-title">WE'RE HERE<br>TO HELP</h2>
+      <p>Ready to get started or have questions? Our team is available 7 days a week to schedule service, answer questions, or respond to emergencies. Get your free estimate today — no obligation.</p>
+      <div class="c-info">
+        <div class="c-info-row">
+          <i class="fas fa-phone"></i>
+          <div>
+            <strong>Call Us</strong>
+            <span>(407) 555-0182</span>
+          </div>
+        </div>
+        <div class="c-info-row">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <strong>Service Area</strong>
+            <span>Orlando, Kissimmee, Winter Park, Sanford &amp; surrounding areas</span>
+          </div>
+        </div>
+        <div class="c-info-row">
+          <i class="fas fa-clock"></i>
+          <div>
+            <strong>Hours</strong>
+            <span>Mon–Sat: 7am–7pm &nbsp;·&nbsp; Emergency: 24/7</span>
+          </div>
+        </div>
+        <div class="c-info-row">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            <span>info@avalontreeservice.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-form">
+      <h3>SEND US A MESSAGE</h3>
+      <div class="form-row">
+        <div class="fg" style="margin-bottom:0">
+          <label>First Name</label>
+          <input type="text" placeholder="John">
+        </div>
+        <div class="fg" style="margin-bottom:0">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div style="height:14px"></div>
+      <div class="form-row">
+        <div class="fg" style="margin-bottom:0">
+          <label>Phone</label>
+          <input type="tel" placeholder="(407) 555-0000">
+        </div>
+        <div class="fg" style="margin-bottom:0">
+          <label>Email</label>
+          <input type="email" placeholder="you@email.com">
+        </div>
+      </div>
+      <div style="height:14px"></div>
+      <div class="fg">
+        <label>Service Needed</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>Tree Trimming / Pruning</option>
+          <option>Tree Removal</option>
+          <option>Stump Grinding</option>
+          <option>Emergency Service</option>
+          <option>Land Clearing</option>
+          <option>Storm Damage Cleanup</option>
+          <option>Insurance Claim Assistance</option>
+          <option>Crane Services</option>
+          <option>Tree Health Care</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Message</label>
+        <textarea placeholder="Tell us about your tree situation..."></textarea>
+      </div>
+      <button class="btn btn-red btn-full" style="padding:16px; font-size:13px; letter-spacing:2px;">SUBMIT REQUEST</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ FOOTER ══════════════════════ -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <h3>AVALON <span>TREE</span> SERVICE</h3>
+      <p>Orlando's trusted tree care experts since 2004. ISA-certified arborists delivering premium service with an unwavering commitment to safety, quality, and customer satisfaction.</p>
+      <div class="socials">
+        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social"><i class="fab fa-google"></i></a>
+        <a href="#" class="social"><i class="fab fa-yelp"></i></a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>QUICK LINKS</h4>
+      <ul class="ft-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>OUR SERVICES</h4>
+      <ul class="ft-links">
+        <li><a href="#">Tree Trimming</a></li>
+        <li><a href="#">Tree Removal</a></li>
+        <li><a href="#">Stump Grinding</a></li>
+        <li><a href="#">Emergency Service</a></li>
+        <li><a href="#">Land Clearing</a></li>
+        <li><a href="#">Storm Cleanup</a></li>
+        <li><a href="#">Crane Services</a></li>
+        <li><a href="#">Insurance Claims</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>CONTACT US</h4>
+      <ul class="ft-links">
+        <li><a href="tel:4075550182"><i class="fas fa-phone"></i>(407) 555-0182</a></li>
+        <li><a href="mailto:info@avalontreeservice.com"><i class="fas fa-envelope"></i>info@avalontreeservice.com</a></li>
+        <li><a href="#"><i class="fas fa-map-marker-alt"></i>Orlando, FL 32801</a></li>
+        <li><a href="#"><i class="fas fa-clock"></i>Mon–Sat: 7am–7pm</a></li>
+        <li><a href="#"><i class="fas fa-bolt"></i>Emergency: 24/7</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2024 <span>Avalon Tree Service</span>. All rights reserved. &nbsp;·&nbsp; Licensed &amp; Insured &nbsp;·&nbsp; ISA Certified</p>
+    <p>Privacy Policy &nbsp;·&nbsp; Terms of Service</p>
+  </div>
+</footer>
+
+<!-- ══════════════════════ JS ══════════════════════ -->
+<script>
+  // Hamburger menu
+  const hamburger   = document.getElementById('hamburger');
+  const mobileMenu  = document.getElementById('mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Close on outside click
+  document.addEventListener('click', e => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      closeMobile();
+    }
+  });
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('main-nav').style.background =
+      window.scrollY > 60 ? 'rgba(5,11,6,.99)' : 'rgba(7,14,9,.97)';
+  });
+
+  // Solutions tab content
+  const tabData = [
+    {
+      tag: 'Tree Removal', title: 'COMPLETE TREE REMOVAL',
+      desc: 'Our expert team safely removes trees of any size using industry-leading equipment and techniques. Whether it\'s a single dead tree or a full grove, we guarantee zero damage to surrounding structures and landscaping. Full stump removal and site cleanup included.',
+      checks: ['Trees of any size','Zero property damage','Full cleanup included','Licensed &amp; insured','Same-day available','Free estimate']
+    },
+    {
+      tag: 'Land Clearing', title: 'PROFESSIONAL LAND CLEARING',
+      desc: 'Preparing land for construction, landscaping, or agriculture? Our team clears brush, trees, stumps, and debris efficiently and responsibly. We handle permitting and environmental compliance so your project stays on schedule.',
+      checks: ['Residential &amp; commercial','Full debris removal','Grading available','Permit assistance','Eco-compliant','Free site assessment']
+    },
+    {
+      tag: 'Tree Health Care', title: 'TREE HEALTH &amp; DISEASE CARE',
+      desc: 'Diseased, stressed, or dying trees need expert intervention. Our certified arborists diagnose and treat a wide range of tree diseases, pest infestations, and nutritional deficiencies to restore your trees to full vitality.',
+      checks: ['Disease diagnosis','Pest treatment','Deep root feeding','Soil analysis','Crown restoration','Health monitoring']
+    },
+    {
+      tag: 'Crane Services', title: 'CRANE-ASSISTED REMOVAL',
+      desc: 'For large, complex, or inaccessible trees, our crane services allow for safe and precise removal without risk to your structures, vehicles, or landscaping. Our operators are certified and experienced in tight-space operations.',
+      checks: ['Large tree removal','Tight space access','Zero impact removal','Certified operators','Full crew included','Commercial &amp; residential']
+    },
+    {
+      tag: 'Storm Damage', title: '24/7 STORM DAMAGE RESPONSE',
+      desc: 'When a storm hits, every minute counts. Our emergency team is available around the clock to remove fallen trees, clear debris, and make your property safe again. We coordinate directly with your insurance adjuster to streamline every claim.',
+      checks: ['24/7 availability','Emergency response','Insurance coordination','Debris removal','Structural assessment','Documentation provided']
+    }
+  ];
+
+  function setTab(el, idx) {
+    document.querySelectorAll('.sol-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    const d = tabData[idx];
+    document.getElementById('sol-content').innerHTML = `
+      <div class="sec-tag">${d.tag}</div>
+      <h3>${d.title}</h3>
+      <p>${d.desc}</p>
+      <ul class="sol-checks">
+        ${d.checks.map(c => `<li><i class="fas fa-check"></i> ${c}</li>`).join('')}
+      </ul>
+      <a href="#contact" class="btn btn-red" style="margin-top:6px;">START YOUR PROJECT</a>`;
+  }
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Prevent default on all hash links that aren't real sections
+  document.querySelectorAll('a[href="#"]').forEach(a =>
+    a.addEventListener('click', e => e.preventDefault())
+  );
+</script>
+</body>
+</html>
