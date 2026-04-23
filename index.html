@@ -1406,6 +1406,12 @@
         display: none;
       }
 
+      .nav-right .btn-red {
+        padding: 8px 14px;
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
       .hamburger {
         display: flex;
       }
@@ -1736,7 +1742,44 @@
 
     @media (max-width: 900px) {
       .variation-nav {
-        display: none;
+        display: block;
+        right: auto;
+        left: 20px;
+        bottom: 20px;
+        top: auto;
+        transform: none;
+        width: auto;
+        z-index: 10005;
+      }
+      .variation-nav-inner {
+        display: flex;
+        align-items: center;
+        border-radius: 40px;
+        padding: 4px;
+      }
+      .variation-nav-hd {
+        padding: 8px 12px;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, .1);
+        background: transparent;
+      }
+      html[data-theme="light"] .variation-nav-hd {
+        border-right: 1px solid rgba(0, 0, 0, .1);
+      }
+      .variation-nav-hd strong { display: none; }
+      .variation-nav-links {
+        flex-direction: row;
+      }
+      .variation-nav-links a {
+        border-bottom: none;
+        padding: 8px 12px;
+      }
+      .variation-nav-links a span { display: none; }
+      .variation-nav-links a.is-active {
+        box-shadow: none;
+        background: var(--accent);
+        color: #fff;
+        border-radius: 30px;
       }
     }
 
@@ -2090,7 +2133,8 @@
       </div>
       <ul class="variation-nav-links">
         <li><a href="index.html" data-variation="index.html">Modern <span>forest</span></a></li>
-        <li><a href="index-sacred-style.html" data-variation="index-sacred-style.html">Sacred <span>classic</span></a></li>
+        <li><a href="index-sacred-style.html" data-variation="index-sacred-style.html">Sacred <span>classic</span></a>
+        </li>
       </ul>
     </div>
   </aside>
